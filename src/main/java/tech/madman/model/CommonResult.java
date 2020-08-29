@@ -62,10 +62,10 @@ public class CommonResult<T> implements Serializable {
         return commonResult;
     }
 
-    public static <T> CommonResult<T> badRequest(T t){
+    public static <T> CommonResult<T> badRequest(String msg){
         CommonResult<T> commonResult = new CommonResult<>();
         commonResult.setCode(500);
-        commonResult.setData(t);
+        commonResult.setMsg(msg);
         return commonResult;
     }
 
