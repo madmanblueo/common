@@ -34,4 +34,47 @@ public class CommonResult<T> implements Serializable {
     public void setData(T data) {
         this.data = data;
     }
+
+    public static <T> CommonResult<T> ok(){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(200);
+        return commonResult;
+    }
+
+    public static <T> CommonResult<T> ok(T t){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(200);
+        commonResult.setData(t);
+        return commonResult;
+    }
+
+    public static <T> CommonResult<T> ok(T t, String msg){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(200);
+        commonResult.setData(t);
+        commonResult.setMsg(msg);
+        return commonResult;
+    }
+
+    public static <T> CommonResult<T> badRequest(){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(500);
+        return commonResult;
+    }
+
+    public static <T> CommonResult<T> badRequest(T t){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(500);
+        commonResult.setData(t);
+        return commonResult;
+    }
+
+
+    public static <T> CommonResult<T> badRequest(T t, String msg){
+        CommonResult<T> commonResult = new CommonResult<>();
+        commonResult.setCode(500);
+        commonResult.setData(t);
+        commonResult.setMsg(msg);
+        return commonResult;
+    }
 }
